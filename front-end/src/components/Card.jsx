@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import ChatResponse from "./ChatResponse";
+import ChatResponse from "./ChatResponse ";
 
 const ChatCard = () => {
   const welcomingText =
