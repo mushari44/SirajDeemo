@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import ChatResponse from "./ChatResponse ";
+import BotResponse from "./BotResponse";
 
 const ChatCard = () => {
   const welcomingText =
@@ -16,34 +16,45 @@ const ChatCard = () => {
   };
 
   const handleSend = async (e) => {
-    if (e) e.preventDefault(); // Prevent default form submission behavior
+    if (e) e.preventDefault();
     if (!query.trim()) return;
+    
+   
+    setChatHistory((prev) => [...prev, { query, response: null }]);
+    setQuery(""); 
     setLoading(true);
-
+  
     try {
-      const res = await axios.post("http://127.0.0.1:8000/chatbot", {
+      
+      const res = await axios.post("http://127.0.0.1:5000/chatbot", {
         query: query,
       });
-
-      setChatHistory((prev) => [
-        ...prev,
-        { query, response: res.data.response },
-      ]);
+  
+      
+      setChatHistory((prev) =>
+        prev.map((chat, index) =>
+          index === prev.length - 1
+            ? { ...chat, response: res.data.response }
+            : chat
+        )
+      );
     } catch (error) {
       console.error("Error fetching chatbot response:", error);
-
-      setChatHistory((prev) => [
-        ...prev,
-        {
-          query,
-          response: "حدث خطأ أثناء معالجة استفسارك. الرجاء المحاولة مرة أخرى.",
-        },
-      ]);
+  
+     
+      setChatHistory((prev) =>
+        prev.map((chat, index) =>
+          index === prev.length - 1
+            ? { ...chat, response: "حدث خطأ أثناء معالجة استفسارك. الرجاء المحاولة مرة أخرى." }
+            : chat
+        )
+      );
     } finally {
       setLoading(false);
-      setQuery("");
     }
   };
+  
+  
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-gray-100">
@@ -56,21 +67,26 @@ const ChatCard = () => {
         </div>
 
         {/* Chat History Section */}
+        
         <div className="bg-gray-50 border border-gray-300 rounded-md h-64 mt-4 p-4 overflow-y-auto">
           {chatHistory.length > 0 ? (
             chatHistory.map((chat, index) => (
-              <ChatResponse
-                key={index}
-                query={chat.query}
-                response={chat.response}
-              />
+              <div key={index}>
+                {/* User Query */}
+                <div className="bg-gray-100 p-4 rounded-md mb-2">
+                  <p className="text-blue-500 font-semibold">Query:</p>
+                  <p>{chat.query}</p>
+                </div>
+
+                {/* Bot Response (if available) */}
+                {chat.response && <BotResponse response={chat.response} />}
+              </div>
             ))
           ) : (
-            <p className="text-gray-500 text-center mt-6">
-              لا توجد محادثات حتى الآن.
-            </p>
+            <p className="text-gray-500 text-center mt-6">لا توجد محادثات حتى الآن.</p>
           )}
         </div>
+
 
         {/* Input and Send Button Section */}
         <form onSubmit={handleSend} className="mt-4">

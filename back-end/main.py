@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware  # Make sure this import is included
 from dotenv import load_dotenv
 import os
 import requests
@@ -13,13 +12,6 @@ from pymongo import MongoClient
 app = FastAPI()
 load_dotenv()
 # CORS configuration
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Allow your frontend origin here
-    allow_credentials=True,
-    allow_methods=["*"],  # Allow all HTTP methods
-    allow_headers=["*"],  # Allow all headers
-)
 
 # MongoDB setup
 client = MongoClient("mongodb://127.0.0.1:27017/")
@@ -62,7 +54,8 @@ def retrieve_documents(user_query):
 
 # Gemini API integration
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = "AIzaSyCEM7rI7XqC9UbJv6l9Il4Ntg61374SsXs"
+# os.getenv("GEMINI_API_KEY")
 
 def call_gemini_api(prompt):
     headers = {

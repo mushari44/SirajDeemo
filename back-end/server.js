@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const axios = require("axios");
 const cors = require("cors");
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 // Middleware
 app.use(cors());
 
@@ -17,6 +17,8 @@ app.get("/", (req, res) => {
 // Chatbot Endpoint
 app.post("/chatbot", async (req, res) => {
   const userQuery = req.body.query;
+
+  console.log("port 5000")
 
   try {
     // Forward the query to the Python API
