@@ -4,10 +4,10 @@ import Card from "./components/Card";
 function App() {
   return (
     <div className="App">
-      <header className="App-header text-black">
+      {/* <header className="App-header text-black">
         <h1>Sriaj</h1>
         <img src={logo} className="App-logo bg-green" alt="logo" />
-      </header>
+      </header> */}
 
       <Card />
     </div>
