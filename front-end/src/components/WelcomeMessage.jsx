@@ -4,7 +4,7 @@ import sirajIcon from "../assets/Siraj-icon.png";
 const WelcomeMessage = ({ timestamp }) => {
 
   const welcomingText = "WELCOME TEST MERGE ";
-  const suggestQ = "ما هي مواضيع المدونة؟";
+  const suggestQ = "ما هي hg المدونة؟";
 
   return (
     <div className="Message-Suggests">
