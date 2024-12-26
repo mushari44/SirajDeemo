@@ -23,18 +23,22 @@ const ChatCard = () => {
   }, []);
 
   useEffect(() => {
-    const timestamp = new Date().toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: true,
-    }).replace("AM", "صباحًا").replace("PM", "مساءً");
+    const timestamp = new Date()
+      .toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      })
+      .replace("AM", "صباحًا")
+      .replace("PM", "مساءً");
     setWelcomeTimestamp(timestamp);
   }, []);
 
   useEffect(() => {
     // Scroll to bottom when chatHistory updates
     if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
     }
   }, [chatHistory]);
 
@@ -46,11 +50,14 @@ const ChatCard = () => {
     if (e) e.preventDefault();
     if (!query.trim()) return;
 
-    const userTimestamp = new Date().toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: true,
-    }).replace("AM", "صباحًا").replace("PM", "مساءً");
+    const userTimestamp = new Date()
+      .toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      })
+      .replace("AM", "صباحًا")
+      .replace("PM", "مساءً");
 
     setChatHistory((prev) => [
       ...prev,
@@ -64,11 +71,14 @@ const ChatCard = () => {
         query: query,
       });
 
-      const botTimestamp = new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true,
-      }).replace("AM", "صباحًا").replace("PM", "مساءً");
+      const botTimestamp = new Date()
+        .toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        })
+        .replace("AM", "صباحًا")
+        .replace("PM", "مساءً");
 
       setChatHistory((prev) =>
         prev.map((chat, index) =>
@@ -91,7 +101,8 @@ const ChatCard = () => {
           index === prev.length - 1
             ? {
                 ...chat,
-                response: "حدث خطأ أثناء معالجة استفسارك. الرجاء المحاولة مرة أخرى.",
+                response:
+                  "حدث خطأ أثناء معالجة استفسارك. الرجاء المحاولة مرة أخرى.",
                 botTimestamp: errorTimestamp,
               }
             : chat
@@ -119,8 +130,8 @@ const ChatCard = () => {
                         <img src={UserIcon} alt="" />
                         <p className="text-sm">{`${chat.timestamp}`}</p>
                         <button
-                        aria-label="Edit message"
-                        className="Edit-Button"
+                          aria-label="Edit message"
+                          className="Edit-Button"
                         >
                           <svg
                             width="24"
@@ -139,18 +150,17 @@ const ChatCard = () => {
                           </svg>
                         </button>
                       </div>
-                    
+
                       <div>
                         <p className="User-Query">{chat.query}</p>
                       </div>
                     </div>
                   </div>
-                  
-                    <BotResponse
-                      response={chat.response}
-                      timestamp={chat.botTimestamp}
-                    />
-                  
+
+                  <BotResponse
+                    response={chat.response}
+                    timestamp={chat.botTimestamp}
+                  />
                 </div>
               ))
             : null}
