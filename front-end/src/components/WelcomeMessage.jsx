@@ -3,6 +3,7 @@ import sirajIcon from "../assets/Siraj-icon.png";
 
 const WelcomeMessage = ({ timestamp }) => {
   const welcomingText = "WELCOME TEST MERGE MUSHARI ";
+
   const suggestQ = "ما هي مواضيع المدونة؟";
 
   return (
