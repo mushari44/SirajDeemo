@@ -3,7 +3,7 @@ import sirajIcon from "../assets/Siraj-icon.png";
 
 const WelcomeMessage = ({ timestamp }) => {
   const welcomingText = "WELCOME";
-  const suggestQ = "ما هي مواضيع المدونة؟";
+  const suggestQ = "ما اهمية ال؟؟";
 
   return (
     <div className="Message-Suggests">
