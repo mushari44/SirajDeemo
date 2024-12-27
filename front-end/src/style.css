@@ -34,8 +34,6 @@ body {
   background: #333;
 }
 
-
-
 .lg\:w-1\/2 {
   width: 70% !important;
   max-width: 800px;
@@ -49,16 +47,15 @@ code {
   height: 28rem;
 }
 
-
-.bg-gray{
+.bg-gray {
   background-color: #f3f3f3;
 }
 
-.text-white{
+.text-white {
   color: black;
 }
 
-.bg-blue-600{
+.bg-blue-600 {
   background-color: #f3f3f3;
 }
 
@@ -66,46 +63,39 @@ code {
   font-weight: 600;
 }
 
-.text-xl{
+.text-xl {
   font-size: 16px;
-  line-height: 1.30rem;
-}     
-
-.Message-Suggests{
-
-
-  direction: ltr;
-
+  line-height: 1.3rem;
 }
 
-.Welcome-Message{
+.Message-Suggests {
+  direction: ltr;
+}
 
+.Welcome-Message {
   width: 80%;
   max-width: 378px;
 }
 
-.Welcome-Message p{
-
+.Welcome-Message p {
   direction: rtl;
-
 }
 
-.Bot-Response{
+.Bot-Response {
   direction: ltr;
 }
 
-.Bot-Response .Response{
+.Bot-Response .Response {
   direction: rtl;
 }
 
-.Bot-Response button.rounded-lg{
-  transition: all .3s;
+.Bot-Response button.rounded-lg {
+  transition: all 0.3s;
 }
 
 .Bot-Response button.rounded-lg:hover {
   border-radius: 0.5rem;
   background-color: #dddddd70;
-  
 }
 
 svg.icon-md-heavy {
@@ -116,108 +106,91 @@ svg.icon-md-heavy path {
   fill: #727272;
 }
 
-.loader{
-
+.loader {
   direction: ltr;
-  
 }
 
-.loader svg{
+.loader svg {
   width: 40px;
 }
 
-.loader div{
-  width: 10%; 
+.loader div {
+  width: 10%;
   display: flex;
   background-color: #f3f3f3;
   justify-content: center;
   align-items: center;
 }
 
-.loader circle{
+.loader circle {
   stroke: black;
   fill: black;
 }
 
-.Bot-Response .Response-Container{
+.Bot-Response .Response-Container {
   width: 80%;
 }
 
-
-.SuggestQ{
-
+.SuggestQ {
   display: flex;
   margin: 10px 0px 1.5rem 0px;
-
 }
 
 .bg-blue-600.suggest {
-    background-color: #f3f3f3;
-    color: #707070;
-    font-weight: 600;
-    font-size: 11px;
-    padding: 5px 5px;
-    height: 25px;
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  background-color: #f3f3f3;
+  color: #707070;
+  font-weight: 600;
+  font-size: 11px;
+  padding: 5px 5px;
+  height: 25px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .bg-blue-600.suggest:first-child {
-  
   margin-left: 0px;
-  
 }
 
-.Time-Icon{
+.Time-Icon {
   display: flex;
   gap: 5px;
   margin-bottom: 5px;
   align-items: center;
 }
 
-.Time-Icon img{
+.Time-Icon img {
   width: 30px;
 }
 
-.Time-Icon .Edit-Button{
+.Time-Icon .Edit-Button {
   width: 20px;
-  transition: all .3s;
+  transition: all 0.3s;
   border-radius: 0.5rem;
   display: none;
 }
 
-.Time-Icon .Edit-Button svg{
+.Time-Icon .Edit-Button svg {
   width: 19px;
-  
 }
 
 .User-Chat:hover > .Time-Icon .Edit-Button {
-
   display: block;
-
 }
 
 .Time-Icon .Edit-Button:hover {
-
   background-color: #dddddd70;
-
 }
 
-
-
-.User-Chat{
-
+.User-Chat {
   margin: 40px 0;
-
 }
 
-.SendIcon{
+.SendIcon {
   width: 80%;
 }
 
-.User-Query{
-
+.User-Query {
   padding-right: 6px;
 }

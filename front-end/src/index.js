@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./style.css";
-import App from "./App";
+import App from "./App";  
 import reportWebVitals from "./reportWebVitals";
+import GlobalState from "./context";
 
 const root = ReactDOM.createRoot(document.body);
 root.render(
   <React.StrictMode>
-    <App />
+    <GlobalState>
+      <App />
+    </GlobalState>
   </React.StrictMode>
 );
 
