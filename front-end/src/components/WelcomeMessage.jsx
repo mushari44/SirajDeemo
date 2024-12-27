@@ -17,6 +17,7 @@ const WelcomeMessage = ({ timestamp }) => {
     "أين يمكنني العثور على أحدث المقالات؟",
   ];
 
+
   return (
     <div className="Message-Suggests">
       {/* Icon and Timestamp */}
