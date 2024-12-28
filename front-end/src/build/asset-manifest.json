@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3ac1ecb3.css",
+    "main.js": "/static/js/main.67462964.js",
+    "static/js/488.f16c8b15.chunk.js": "/static/js/488.f16c8b15.chunk.js",
+    "static/media/Siraj-icon.png": "/static/media/Siraj-icon.853342c18cabbae2b29b.png",
+    "static/media/user.png": "/static/media/user.4f5be819843f8b287262.png",
+    "static/media/dislike.svg": "/static/media/dislike.fb7958009d7b55077327485dcb60d1e1.svg",
+    "static/media/like.svg": "/static/media/like.e5f237c8ce4bf03db77c3824a36f6d88.svg",
+    "static/media/edit-text.svg": "/static/media/edit-text.f389c023eb5d166b6096506bc1f3f2ac.svg",
+    "static/media/copy.svg": "/static/media/copy.f03fd1b2ac8950714ba219734f266e58.svg",
+    "index.html": "/index.html",
+    "static/media/check.svg": "/static/media/check.a6151888542feae6b5840a95a69ed0b8.svg",
+    "main.3ac1ecb3.css.map": "/static/css/main.3ac1ecb3.css.map",
+    "main.67462964.js.map": "/static/js/main.67462964.js.map",
+    "488.f16c8b15.chunk.js.map": "/static/js/488.f16c8b15.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ac1ecb3.css",
+    "static/js/main.67462964.js"
+  ]
+}
